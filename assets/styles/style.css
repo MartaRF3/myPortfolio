@@ -1,0 +1,91 @@
+:root {
+  --padding-1: 10px;
+  --padding-2: calc(var(--padding-1) * 2);
+  --padding-3: calc(var(--padding-1) * 3);
+  --padding-4: calc(var(--padding-1) * 4);
+  --padding-5: calc(var(--padding-1) * 5);
+}
+
+.title-1 {
+  --font-size: 50px;
+}
+
+.text {
+  --font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  :root {
+    --padding-1: 20px;
+  }
+
+  .title-1 {
+    --font-size: 70px;
+  }
+
+  .text {
+    --font-size: 16px;
+  }
+}
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.title-1 {
+  padding: var(--padding-1) 0 var(--padding-3) 0;
+  font-family: "Kaushan Script", cursive;
+  font-size: var(--font-size);
+  color: #222222;
+}
+
+.text {
+  font-family: "Grandstander", cursive;
+  font-size: var(--font-size);
+  color: #222222;
+}
+
+.header {
+  --position: static;
+  --width: 100%;
+}
+
+.header__nav {
+  --display: flex;
+}
+
+@media (min-width: 768px) {
+  .header {
+    --position: fixed;
+    --width: min-content;
+  }
+
+  .header__nav {
+    --display: block;
+  }
+}
+.header {
+  position: var(--position);
+  top: 100px;
+  right: 0;
+  width: var(--width);
+  padding: var(--padding-1);
+  background-color: azure;
+}
+.header__nav {
+  display: var(--display);
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+.header__link {
+  width: 50%;
+  padding: var(--padding-1);
+  text-align: center;
+  text-decoration: underline wavy #ed85fa 1px;
+}
+
+.main {
+  padding: var(--padding-2);
+}
+
+/*# sourceMappingURL=style.css.map */

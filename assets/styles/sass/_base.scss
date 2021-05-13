@@ -1,0 +1,46 @@
+// Variable definition
+.header {
+  --position: static;
+  --width: 100%;
+}
+.header__nav {
+  --display: flex;
+}
+
+@media (min-width: 768px) {
+  .header {
+    --position: fixed;
+    --width: min-content;
+  }
+  .header__nav {
+    --display: block;
+  }
+}
+
+// Layout
+
+.header {
+  position: var(--position);
+  top: 100px;
+  right: 0;
+  width: var(--width);
+  padding: var(--padding-1);
+  background-color: azure;
+
+  &__nav {
+    display: var(--display);
+    justify-content: space-around;
+    flex-wrap: wrap;
+
+  }
+  &__link {
+    width: 50%;
+    padding: var(--padding-1);
+    text-align: center;
+    text-decoration: underline wavy $purple 1px;
+  }
+}
+
+.main {
+  padding: var(--padding-2);
+}
