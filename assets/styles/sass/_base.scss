@@ -2,18 +2,34 @@
 .header {
   --position: static;
   --width: 100%;
+  --border-r: 0;
 }
 .header__nav {
   --display: flex;
+}
+.main {
+  --display: block;
+  --padding: var(--padding-2);
+  &__container {
+    --padding-top: none;
+  }
 }
 
 @media (min-width: 768px) {
   .header {
     --position: fixed;
     --width: min-content;
+    --border-r: 10px 0 0 10px;
   }
   .header__nav {
     --display: block;
+  }
+  .main {
+    --display: grid;
+    --padding: 0 0 var(--padding-2) 0;
+    &__container {
+      --padding-top: var(--padding-5);
+    }
   }
 }
 
@@ -25,22 +41,51 @@
   right: 0;
   width: var(--width);
   padding: var(--padding-1);
-  background-color: azure;
+  background-color: $primary-light;
+  border-radius: var(--border-r);
 
-  &__nav {
+  &__nav { 
     display: var(--display);
+    max-width: 400px;
+    margin: 0 auto;
     justify-content: space-around;
     flex-wrap: wrap;
-
   }
   &__link {
     width: 50%;
     padding: var(--padding-1);
     text-align: center;
-    text-decoration: underline wavy $purple 1px;
+    text-decoration: underline wavy $primary 1.46px;
+    &:active {
+      border: 3px wavy $primary;
+    }
   }
 }
 
 .main {
-  padding: var(--padding-2);
+  display: var(--display);
+  grid-template-columns: minmax(20vw, 1fr) minmax(auto, 1360px) minmax(20vw, 1fr);
+
+  &__container {
+    padding-top: var(--padding-top);
+    grid-column: 2;
+  }
+  .text, .title-1 {
+    padding: var(--padding);
+  }
+}
+
+.footer {
+  padding: var(--padding-1);
+  background-color: $primary-light;
+
+  ul {
+    display: flex;
+    justify-content: center;
+  }
+  &__icon {
+    padding: 15px;
+    font-size: 22px;
+    font-weight: 700;
+  }
 }

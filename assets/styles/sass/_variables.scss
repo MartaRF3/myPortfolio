@@ -1,9 +1,15 @@
 // Variable definition
 // Colors
 $black: #222222;
-$purple: #ed85fa;
+$primary: hsl(var(--primary-hue), 92%, 75%);
+$primary-light: hsl(var(--primary-hue), 45%, 93%);
+
+// Effects
+$shadow-soft: 0 0 45px $primary;
 
 :root {
+  // Colors
+  --primary-hue: 293;
   // Paddings
   --padding-1: 10px;
   --padding-2: calc(var(--padding-1) * 2);
@@ -16,7 +22,7 @@ $purple: #ed85fa;
   --font-size: 50px;
 }
 .text {
-  --font-size: 14px;
+  --font-size: 16px;
 }
 
 @media (min-width: 768px) {
@@ -27,7 +33,7 @@ $purple: #ed85fa;
     --font-size: 70px;
   }
   .text {
-    --font-size: 16px;
+    --font-size: 18px;
   }
 }
 
@@ -42,9 +48,11 @@ img {
   font-family: 'Kaushan Script', cursive;
   font-size: var(--font-size);
   color: $black;
+  text-shadow: $shadow-soft;
 }
 .text {
   font-family: 'Grandstander', cursive;
   font-size: var(--font-size);
+  line-height: 1.3em;
   color: $black;
 }
