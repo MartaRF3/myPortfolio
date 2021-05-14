@@ -7,11 +7,18 @@
 .header__nav {
   --display: flex;
 }
+.header__link--active {
+  --font-weight: 700;
+  --icon: "";
+}
 .main {
   --display: block;
   --padding: var(--padding-2);
   &__container {
     --padding-top: none;
+  }
+  .footer__icon {
+    --font-size: 18px;
   }
 }
 
@@ -24,12 +31,19 @@
   .header__nav {
     --display: block;
   }
+  .header__link--active {
+    --font-weight: 500;
+    --icon: "💜";
+  }
   .main {
     --display: grid;
     --padding: 0 0 var(--padding-2) 0;
     &__container {
       --padding-top: var(--padding-5);
     }
+  }
+  .footer__icon {
+    --font-size: 22px;
   }
 }
 
@@ -56,8 +70,17 @@
     padding: var(--padding-1);
     text-align: center;
     text-decoration: underline wavy $primary 1.46px;
-    &:active {
-      border: 3px wavy $primary;
+  }
+  &__link--active {
+    position: relative;
+    font-weight: var(--font-weight);
+    font-style: italic;
+    &::after {
+      content: var(--icon);
+      position: absolute;
+      right: -64px;
+      top: 22px;
+      opacity: 0.75;
     }
   }
 }
@@ -85,7 +108,7 @@
   }
   &__icon {
     padding: 15px;
-    font-size: 22px;
+    font-size: var(--font-size);
     font-weight: 700;
   }
 }
