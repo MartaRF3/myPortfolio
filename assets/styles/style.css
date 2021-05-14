@@ -1,3 +1,4 @@
+@charset "UTF-8";
 :root {
   --primary-hue: 293;
   --padding-1: 10px;
@@ -9,6 +10,11 @@
 
 .title-1 {
   --font-size: 50px;
+  --padding: var(--padding-3) var(--padding-3) var(--padding-4) var(--padding-3);
+}
+
+.title-2 {
+  --font-size: 25px;
 }
 
 .text {
@@ -22,6 +28,11 @@
 
   .title-1 {
     --font-size: 70px;
+    --padding: var(--padding-2) var(--padding-2) var(--padding-4) var(--padding-2);
+  }
+
+  .title-2 {
+    --font-size: 35px;
   }
 
   .text {
@@ -34,11 +45,21 @@ img {
 }
 
 .title-1 {
-  padding: var(--padding-1) 0 var(--padding-3) 0;
-  font-family: "Kaushan Script", cursive;
+  padding: var(--padding);
+  font-family: "Fredoka One", cursive;
   font-size: var(--font-size);
   color: #222222;
-  text-shadow: 0 0 45px hsl(var(--primary-hue), 92%, 75%);
+  text-shadow: 0 0 60px hsl(var(--primary-hue), 92%, 75%);
+}
+.title-1 span {
+  padding-left: 20px;
+  font-size: calc(var(--font-size) / 1.9 );
+}
+
+.title-2 {
+  font-family: "Fredoka One", cursive;
+  font-size: var(--font-size);
+  color: #222222;
 }
 
 .text {
@@ -46,6 +67,15 @@ img {
   font-size: var(--font-size);
   line-height: 1.3em;
   color: #222222;
+}
+
+.link {
+  display: block;
+  transition: all 300ms ease-in-out;
+  text-decoration: underline wavy hsl(var(--primary-hue), 92%, 75%) 1.46px;
+}
+.link:hover {
+  transform: scale(1.2) translateX(-10px);
 }
 
 .header {
@@ -58,12 +88,19 @@ img {
   --display: flex;
 }
 
+.header__link--active {
+  --font-weight: 700;
+  --icon: "";
+}
+
 .main {
   --display: block;
-  --padding: var(--padding-2);
 }
 .main__container {
   --padding-top: none;
+}
+.main .footer__icon {
+  --font-size: 18px;
 }
 
 @media (min-width: 768px) {
@@ -77,12 +114,20 @@ img {
     --display: block;
   }
 
+  .header__link--active {
+    --font-weight: 500;
+    --icon: "💜";
+  }
+
   .main {
     --display: grid;
-    --padding: 0 0 var(--padding-2) 0;
   }
   .main__container {
     --padding-top: var(--padding-5);
+  }
+
+  .footer__icon {
+    --font-size: 22px;
   }
 }
 .header {
@@ -105,10 +150,18 @@ img {
   width: 50%;
   padding: var(--padding-1);
   text-align: center;
-  text-decoration: underline wavy hsl(var(--primary-hue), 92%, 75%) 1.46px;
 }
-.header__link:active {
-  border: 3px wavy hsl(var(--primary-hue), 92%, 75%);
+.header__link--active {
+  position: relative;
+  font-weight: var(--font-weight);
+  font-style: italic;
+}
+.header__link--active::after {
+  content: var(--icon);
+  position: absolute;
+  right: -64px;
+  top: 22px;
+  opacity: 0.75;
 }
 
 .main {
@@ -118,9 +171,6 @@ img {
 .main__container {
   padding-top: var(--padding-top);
   grid-column: 2;
-}
-.main .text, .main .title-1 {
-  padding: var(--padding);
 }
 
 .footer {
@@ -133,7 +183,7 @@ img {
 }
 .footer__icon {
   padding: 15px;
-  font-size: 22px;
+  font-size: var(--font-size);
   font-weight: 700;
 }
 
@@ -143,18 +193,71 @@ img {
   --ellipse-o: ellipse(130px 160px at 27% 48%);
 }
 
+.card {
+  --max-width: 320px;
+}
+
 @media (min-width: 768px) {
   .about .image {
-    --width: 300px;
+    --width: 500px;
     --ellipse: ellipse(180px 210px at 24% 47%);
     --ellipse-o: ellipse(180px 210px at 27% 47%);
   }
+
+  .card {
+    --max-width: none;
+  }
+}
+.about .title-1 {
+  padding: var(--padding-2) var(--padding-2) var(--padding-4) var(--padding-2);
+}
+.about .text {
+  padding: var(--padding-2) var(--padding-2) var(--padding-4) var(--padding-2);
 }
 .about .image {
   shape-outside: var(--ellipse-o);
   clip-path: var(--ellipse);
   width: var(--width);
   float: left;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  max-width: 300px;
+  max-width: var(--max-width);
+  margin: var(--padding-1) var(--padding-2);
+}
+.card__container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.card__image {
+  flex: 1;
+  border-radius: 0 0 10px 10px;
+  border: 5px solid hsl(var(--primary-hue), 45%, 93%);
+  overflow: hidden;
+}
+.card__image img {
+  width: 100%;
+  object-fit: cover;
+}
+.card__content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px 10px 0 0;
+  background-color: hsl(var(--primary-hue), 45%, 93%);
+}
+.card__title {
+  padding: var(--padding-2) var(--padding-2) 0 var(--padding-2);
+}
+.card .text {
+  padding: var(--padding-2);
+}
+.card .link {
+  align-self: flex-end;
 }
 
 /*# sourceMappingURL=style.css.map */
