@@ -10,6 +10,7 @@
 
 .title-1 {
   --font-size: 50px;
+  --padding: var(--padding-3) var(--padding-3) var(--padding-4) var(--padding-3);
 }
 
 .title-2 {
@@ -27,6 +28,7 @@
 
   .title-1 {
     --font-size: 70px;
+    --padding: var(--padding-2) var(--padding-2) var(--padding-4) var(--padding-2);
   }
 
   .title-2 {
@@ -43,7 +45,7 @@ img {
 }
 
 .title-1 {
-  padding: var(--padding-1) 0 var(--padding-3) 0;
+  padding: var(--padding);
   font-family: "Fredoka One", cursive;
   font-size: var(--font-size);
   color: #222222;
@@ -67,11 +69,12 @@ img {
   color: #222222;
 }
 
-a[href] {
+.link {
   display: block;
   transition: all 300ms ease-in-out;
+  text-decoration: underline wavy hsl(var(--primary-hue), 92%, 75%) 1.46px;
 }
-a[href]:hover {
+.link:hover {
   transform: scale(1.2) translateX(-10px);
 }
 
@@ -92,7 +95,6 @@ a[href]:hover {
 
 .main {
   --display: block;
-  --padding: var(--padding-2);
 }
 .main__container {
   --padding-top: none;
@@ -119,7 +121,6 @@ a[href]:hover {
 
   .main {
     --display: grid;
-    --padding: 0 0 var(--padding-2) 0;
   }
   .main__container {
     --padding-top: var(--padding-5);
@@ -149,7 +150,6 @@ a[href]:hover {
   width: 50%;
   padding: var(--padding-1);
   text-align: center;
-  text-decoration: underline wavy hsl(var(--primary-hue), 92%, 75%) 1.46px;
 }
 .header__link--active {
   position: relative;
@@ -171,9 +171,6 @@ a[href]:hover {
 .main__container {
   padding-top: var(--padding-top);
   grid-column: 2;
-}
-.main .text, .main .title-1 {
-  padding: var(--padding);
 }
 
 .footer {
@@ -197,31 +194,25 @@ a[href]:hover {
 }
 
 .card {
-  --flex-direction: column;
-}
-.card__image {
-  --border-radius: 10px 10px 0 0;
-}
-.card__content {
-  --border-radius: 0 0 10px 10px;
+  --max-width: 320px;
 }
 
 @media (min-width: 768px) {
   .about .image {
-    --width: 300px;
+    --width: 500px;
     --ellipse: ellipse(180px 210px at 24% 47%);
     --ellipse-o: ellipse(180px 210px at 27% 47%);
   }
 
   .card {
-    --flex-direction: row;
+    --max-width: none;
   }
-  .card__image {
-    --border-radius: 10px 0 0 10px;
-  }
-  .card__content {
-    --border-radius: 0 10px 10px 0;
-  }
+}
+.about .title-1 {
+  padding: var(--padding-2) var(--padding-2) var(--padding-4) var(--padding-2);
+}
+.about .text {
+  padding: var(--padding-2) var(--padding-2) var(--padding-4) var(--padding-2);
 }
 .about .image {
   shape-outside: var(--ellipse-o);
@@ -232,13 +223,20 @@ a[href]:hover {
 
 .card {
   display: flex;
-  flex-direction: var(--flex-direction);
+  flex-direction: column;
+  max-width: 300px;
+  max-width: var(--max-width);
   margin: var(--padding-1) var(--padding-2);
+}
+.card__container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 .card__image {
   flex: 1;
-  border-radius: var(--border-radius);
-  border: 3px solid hsl(var(--primary-hue), 45%, 93%);
+  border-radius: 0 0 10px 10px;
+  border: 5px solid hsl(var(--primary-hue), 45%, 93%);
   overflow: hidden;
 }
 .card__image img {
@@ -247,12 +245,19 @@ a[href]:hover {
 }
 .card__content {
   flex: 1;
-  border-radius: var(--border-radius);
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px 10px 0 0;
   background-color: hsl(var(--primary-hue), 45%, 93%);
 }
 .card__title {
   padding: var(--padding-2) var(--padding-2) 0 var(--padding-2);
-  text-align: center;
+}
+.card .text {
+  padding: var(--padding-2);
+}
+.card .link {
+  align-self: flex-end;
 }
 
 /*# sourceMappingURL=style.css.map */

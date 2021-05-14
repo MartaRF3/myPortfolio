@@ -20,6 +20,7 @@ $shadow-soft: 0 0 60px $primary;
 
 .title-1 {
   --font-size: 50px;
+  --padding: var(--padding-3) var(--padding-3) var(--padding-4) var(--padding-3);
 }
 .title-2 {
   --font-size: 25px;
@@ -34,6 +35,7 @@ $shadow-soft: 0 0 60px $primary;
   }
   .title-1 {
     --font-size: 70px;
+    --padding: var(--padding-2) var(--padding-2) var(--padding-4) var(--padding-2);
   }
   .title-2 {
     --font-size: 35px;
@@ -50,7 +52,7 @@ img {
   height: auto;
 }
 .title-1 {
-  padding: var(--padding-1) 0 var(--padding-3) 0;
+  padding: var(--padding);
   font-family: 'Fredoka One', cursive;
   font-size: var(--font-size);
   color: $black;
@@ -71,9 +73,10 @@ img {
   line-height: 1.3em;
   color: $black;
 }
-a[href] {
+.link {
   display: block;
   transition: all 300ms ease-in-out;
+  text-decoration: underline wavy $primary 1.46px;
   &:hover {
     transform: scale(1.2) translateX(-10px);
   }

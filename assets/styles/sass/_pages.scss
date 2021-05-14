@@ -1,37 +1,37 @@
 // Variable definition
-.about .image {
-  --width: 250px;
-  --ellipse: ellipse(130px 160px at 24% 48%);
-  --ellipse-o: ellipse(130px 160px at 27% 48%);
+.about {
+  .image {
+    --width: 250px;
+    --ellipse: ellipse(130px 160px at 24% 48%);
+    --ellipse-o: ellipse(130px 160px at 27% 48%);
+  }
 }
+
 .card {
-  --flex-direction: column;
-  &__image {
-    --border-radius: 10px 10px 0 0;
-  }
-  &__content {
-    --border-radius: 0 0 10px 10px;
-  }
+  --max-width: 320px;
 }
+
 @media (min-width: 768px) {
   .about .image {
-    --width: 300px;
+    --width: 500px;
     --ellipse: ellipse(180px 210px at 24% 47%);
     --ellipse-o: ellipse(180px 210px at 27% 47%);
   }
   .card {
-    --flex-direction: row;
-    &__image {
-      --border-radius: 10px 0 0 10px;
-    }
-    &__content {
-      --border-radius: 0 10px 10px 0;
-    }
+    --max-width: none;
   }
 }
 
 //Layout
+
+// About Page
 .about {
+  .title-1 {
+    padding: var(--padding-2) var(--padding-2) var(--padding-4) var(--padding-2);
+  }
+  .text {
+    padding: var(--padding-2) var(--padding-2) var(--padding-4) var(--padding-2);
+  }
   .image {
     shape-outside: var(--ellipse-o);
     clip-path: var(--ellipse);
@@ -39,20 +39,25 @@
     float: left;
   }
 }
+// Projects Page
 .projects {}
 
 .card {
   display: flex;
-  flex-direction: var(--flex-direction);
+  flex-direction: column;
+  max-width: 300px;
+  max-width: var(--max-width);
   margin: var(--padding-1) var(--padding-2);
 
   &__container {
-    
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
   }
   &__image {
     flex: 1;
-    border-radius: var(--border-radius);
-    border: 3px solid $primary-light;
+    border-radius: 0 0 10px 10px;
+    border: 5px solid $primary-light;
     overflow: hidden;
 
     img {
@@ -62,11 +67,19 @@
   }
   &__content {
     flex: 1;
-    border-radius: var(--border-radius);
+
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px 10px 0 0;
     background-color: $primary-light;
   }
   &__title {
     padding: var(--padding-2) var(--padding-2) 0 var(--padding-2);
-    text-align: center;
+  }
+  .text {
+    padding: var(--padding-2);
+  }
+  .link {
+    align-self: flex-end;
   }
 }

@@ -13,7 +13,6 @@
 }
 .main {
   --display: block;
-  --padding: var(--padding-2);
   &__container {
     --padding-top: none;
   }
@@ -37,7 +36,6 @@
   }
   .main {
     --display: grid;
-    --padding: 0 0 var(--padding-2) 0;
     &__container {
       --padding-top: var(--padding-5);
     }
@@ -69,7 +67,6 @@
     width: 50%;
     padding: var(--padding-1);
     text-align: center;
-    text-decoration: underline wavy $primary 1.46px;
   }
   &__link--active {
     position: relative;
@@ -92,9 +89,6 @@
   &__container {
     padding-top: var(--padding-top);
     grid-column: 2;
-  }
-  .text, .title-1 {
-    padding: var(--padding);
   }
 }
 
