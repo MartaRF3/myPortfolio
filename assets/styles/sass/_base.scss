@@ -85,6 +85,7 @@
 .main {
   display: var(--display);
   grid-template-columns: minmax(20vw, 1fr) minmax(auto, 1360px) minmax(20vw, 1fr);
+  margin-bottom: 50px;
 
   &__container {
     padding-top: var(--padding-top);
