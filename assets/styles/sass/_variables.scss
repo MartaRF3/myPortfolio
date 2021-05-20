@@ -6,6 +6,7 @@ $primary-light: hsl(var(--primary-hue), 45%, 93%);
 
 // Effects
 $shadow-soft: 0 0 60px $primary;
+$shadow-btn: 3px 3px 0 $primary;
 
 :root {
   // Colors
@@ -28,6 +29,9 @@ $shadow-soft: 0 0 60px $primary;
 .text {
   --font-size: 16px;
 }
+.text-md {
+  --font-size: 20px;
+}
 
 @media (min-width: 768px) {
   :root {
@@ -35,7 +39,7 @@ $shadow-soft: 0 0 60px $primary;
   }
   .title-1 {
     --font-size: 70px;
-    --padding: var(--padding-2) var(--padding-2) var(--padding-4) var(--padding-2);
+    --padding: 0 0 var(--padding-4) 0;
   }
   .title-2 {
     --font-size: 35px;
@@ -43,14 +47,13 @@ $shadow-soft: 0 0 60px $primary;
   .text {
     --font-size: 18px;
   }
+  .text-md {
+    --font-size: 24px;
+  }
 }
 
 // Layout 
 
-img {
-  max-width: 100%;
-  height: auto;
-}
 .title-1 {
   padding: var(--padding);
   font-family: 'Fredoka One', cursive;
@@ -59,7 +62,6 @@ img {
   text-shadow: $shadow-soft;
   span {
     padding-left: 20px;
-    font-size: calc(var(--font-size) / 1.9 );
   }
 }
 .title-2 {
@@ -67,17 +69,45 @@ img {
   font-size: var(--font-size);
   color: $black;
 }
-.text {
+.text, .text-md {
   font-family: 'Grandstander', cursive;
   font-size: var(--font-size);
   line-height: 1.3em;
   color: $black;
 }
+.text-md {
+  font-weight: 500;
+}
+
+// Components
 .link {
   display: block;
   transition: all 300ms ease-in-out;
   text-decoration: underline wavy $primary 1.46px;
   &:hover {
     transform: scale(1.2) translateX(-10px);
+  }
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+.btn {
+  display: inline-block;
+  padding: 10px 30px;
+  margin: 20px 20px 50px 20px;
+  background-color: $primary-light;
+  border: 2px solid $primary;
+  border-radius: 6px;
+  box-shadow: $shadow-btn;
+  transition: filter 1000ms ease-out, transform 400ms ease;
+  &:hover,
+  &:focus {
+    filter: hue-rotate(360deg);
+  }
+  &:active {
+    transform: translate(3px, 3px);
+    box-shadow: none;
   }
 }
