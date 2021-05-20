@@ -1,4 +1,10 @@
 // Variable definition
+.home {
+  --padding-text: var(--padding-3) var(--padding-3) 0 var(--padding-3);
+  &__container {
+    --max-width: 400px;
+  }
+}
 .about {
   .image {
     --width: 250px;
@@ -12,6 +18,12 @@
 }
 
 @media (min-width: 768px) {
+  .home {
+    --padding-text: 0;
+    &__container {
+      --max-width: none;
+    }
+  }
   .about .image {
     --width: 500px;
     --ellipse: ellipse(180px 210px at 24% 47%);
@@ -23,6 +35,33 @@
 }
 
 //Layout
+
+// Home Page
+.home {
+  &__container {
+    max-width: var(--max-width);
+    display: flex;
+    flex-direction: column;
+    padding: var(--padding-text);
+  }
+  &__title {
+  }
+  &__intro {
+    padding-bottom: 20px;
+  }
+  &__about-text,
+  &__contact-text {
+    text-align: right;
+  }
+  &__about-btn,
+  &__contact-btn {
+    align-self: flex-start;
+  }
+  &__projects-btn, 
+  &__next{
+    align-self: flex-end;
+  }
+}
 
 // About Page
 .about {
@@ -83,3 +122,5 @@
     align-self: flex-end;
   }
 }
+
+
