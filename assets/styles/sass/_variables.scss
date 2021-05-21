@@ -4,6 +4,9 @@ $black: #222222;
 $primary: hsl(var(--primary-hue), 92%, 75%);
 $primary-light: hsl(var(--primary-hue), 45%, 93%);
 
+// Background image
+// https://unsplash.com/photos/vS3idIiYxX0
+
 // Effects
 $shadow-soft: 0 0 60px $primary;
 $shadow-btn: 3px 3px 0 $primary;
@@ -11,6 +14,7 @@ $shadow-btn: 3px 3px 0 $primary;
 :root {
   // Colors
   --primary-hue: 293;
+  --hex: #ec85fa;
   // Paddings
   --padding-1: 10px;
   --padding-2: calc(var(--padding-1) * 2);
