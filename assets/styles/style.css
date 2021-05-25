@@ -1,6 +1,7 @@
 @charset "UTF-8";
 :root {
   --primary-hue: 293;
+  --hex: #ec85fa;
   --padding-1: 10px;
   --padding-2: calc(var(--padding-1) * 2);
   --padding-3: calc(var(--padding-1) * 3);
@@ -159,6 +160,16 @@ img {
     --font-size: 22px;
   }
 }
+html {
+  height: 100%;
+}
+
+body {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
 .header {
   position: var(--position);
   top: 100px;
@@ -209,6 +220,7 @@ img {
 
 .footer {
   padding: var(--padding-1);
+  margin-top: auto;
   background-color: hsl(var(--primary-hue), 45%, 93%);
 }
 .footer ul {
@@ -234,6 +246,16 @@ img {
   --ellipse-o: ellipse(130px 160px at 27% 48%);
 }
 
+.contact__container {
+  --flex-direction: column;
+}
+.contact__text {
+  --width: 90%;
+}
+.contact__img {
+  --width: 90%;
+}
+
 .card {
   --max-width: 320px;
 }
@@ -253,7 +275,17 @@ img {
   }
 
   .card {
-    --max-width: none;
+    --max-width: 650px;
+  }
+
+  .contact__container {
+    --flex-direction: row;
+  }
+  .contact__text {
+    --width: auto;
+  }
+  .contact__img {
+    --width: 50%;
   }
 }
 .home__container {
@@ -325,6 +357,42 @@ img {
 }
 .card .link {
   align-self: flex-end;
+}
+
+.contact__container {
+  display: flex;
+  flex-direction: var(--flex-direction);
+  flex-wrap: wrap;
+}
+.contact__img {
+  min-width: 200px;
+  width: var(--width);
+  max-width: 400px;
+  border-radius: 10px;
+}
+.contact__text li {
+  position: relative;
+  width: var(--width);
+  padding-left: 50px;
+  margin-top: 20px;
+}
+.contact__text li:nth-child(1)::before {
+  content: "📫";
+}
+.contact__text li:nth-child(2)::before {
+  content: "🍧";
+}
+.contact__text li::before {
+  position: absolute;
+  left: 23px;
+  top: 2px;
+}
+.contact__text li a {
+  display: inline-block;
+  width: 100%;
+  padding: 5px 10px 3px 10px;
+  border: 2px solid hsl(var(--primary-hue), 92%, 75%);
+  border-radius: 6px;
 }
 
 /*# sourceMappingURL=style.css.map */
