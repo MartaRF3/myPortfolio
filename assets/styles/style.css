@@ -391,7 +391,7 @@ body {
   display: inline-block;
   width: 100%;
   padding: 5px 10px 3px 10px;
-  border: 2px solid hsl(var(--primary-hue), 92%, 75%);
+  border: 3px solid hsl(var(--primary-hue), 45%, 93%);
   border-radius: 6px;
 }
 
