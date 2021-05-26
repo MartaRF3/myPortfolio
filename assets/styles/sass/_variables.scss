@@ -6,10 +6,13 @@ $primary-light: hsl(var(--primary-hue), 45%, 93%);
 
 // Background image
 // https://unsplash.com/photos/vS3idIiYxX0
+$bg-img: url('../../assets/images/image_by_olga_thelavart.jpg');
+
 
 // Effects
 $shadow-soft: 0 0 60px $primary;
 $shadow-btn: 3px 3px 0 $primary;
+$shadow-left: -2px 5px 0 3px $primary;
 
 :root {
   // Colors

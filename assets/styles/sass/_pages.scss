@@ -90,7 +90,7 @@
   .title-1 {
     padding: var(--padding-2) var(--padding-2) var(--padding-4) var(--padding-2);
   }
-  .text {
+  &__text {
     padding: var(--padding-2) var(--padding-2) var(--padding-4) var(--padding-2);
   }
   .image {
@@ -98,6 +98,41 @@
     clip-path: var(--ellipse);
     width: var(--width);
     float: left;
+  }
+}
+.note {
+  position: relative;
+  width: 300px;
+  
+  &__container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-top: 50px;
+  }
+  &__img {
+    border-radius: 10px;
+    filter: greyscale(0);
+    transition: opacity 200ms ease-in;
+  }
+  &__text {
+    position: absolute;
+    top: 80px;
+    width: 100%;
+    padding: 10px 0;
+    opacity: 0;
+    background-image: $bg-img;
+    text-align: center;
+    transition: opacity 200ms ease-in;
+  }
+  &:hover {
+    .note__text {
+      opacity: 1;
+    }
+    .note__img {
+      opacity: 0.4;
+    }
   }
 }
 
