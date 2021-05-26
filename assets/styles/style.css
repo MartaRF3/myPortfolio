@@ -362,7 +362,7 @@ body {
   opacity: 1;
 }
 .note:hover .note__img {
-  opacity: 0.6;
+  opacity: 0.4;
 }
 
 .card {
