@@ -3,7 +3,7 @@
   --position: static;
   --width: 100%;
   --border-r: 0;
-  --bg-img: url('../../assets/images/footer.jpg');
+  --bg-img: url('../../assets/images/header-4.png');
   --shadow: none;
 }
 .header__nav {
@@ -11,7 +11,9 @@
 }
 .header__link--active {
   --font-weight: 700;
-  --icon: "";
+  --width: auto;
+  --background-image: '';
+  --background-color: transparent;
 }
 .main {
   --main-display: block;
@@ -28,15 +30,17 @@
     --position: fixed;
     --width: min-content;
     --border-r: 10px 0 0 10px;
-    --bg-img: '';
-    --shadow: $shadow-left;
+    --bg-img: url('../../assets/images/header-4.png');
+    --shadow: -2px 5px 0 3px #ec85fa;
   }
   .header__nav {
     --display: block;
   }
   .header__link--active {
     --font-weight: 500;
-    --icon: "💜";
+    --width: 155%;
+    --background-image: url('../../assets/images/image_by_olga_thelavart-2.png');
+    --background-color: white;
   }
   .main {
     --main-display: grid;
@@ -68,7 +72,6 @@ body {
   padding: var(--padding-1);
   background-color: $primary-light;
   border-radius: var(--border-r);
-  box-shadow: var(--shadow);
   background-image: var(--bg-img);
   background-size: cover;
   transition: all 200ms ease-in-out;
@@ -87,15 +90,12 @@ body {
   }
   &__link--active {
     position: relative;
+    left: -20px;
+    width: var(--width);
+    background-color: var(--background-color);
+    background-image: var(--background-image);
     font-weight: var(--font-weight);
     font-style: italic;
-    &::after {
-      content: var(--icon);
-      position: absolute;
-      right: -64px;
-      top: 22px;
-      opacity: 0.75;
-    }
   }
 }
 
@@ -103,7 +103,7 @@ body {
   display: var(--main-display);
   grid-template-columns: minmax(20vw, 1fr) minmax(auto, 1360px) minmax(20vw, 1fr);
   margin: 0 auto;
-  margin-bottom: 50px;
+  margin-bottom: 100px;
 
   &__container {
     display: flex;
@@ -115,11 +115,9 @@ body {
 }
 
 .footer {
-  background-image: url('../../assets/images/footer.jpg');
-  background-size: cover;
   padding: var(--padding-1);
   margin-top: auto;
-  background-color: $primary-light;
+  background-color: $primary;
 
   ul {
     display: flex;

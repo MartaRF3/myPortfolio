@@ -6,7 +6,7 @@ $primary-light: hsl(var(--primary-hue), 45%, 93%);
 
 // Background image
 // https://unsplash.com/photos/vS3idIiYxX0
-$bg-img: url('../../assets/images/image_by_olga_thelavart.jpg');
+$bg-img: url('../../assets/images/image_by_olga_thelavart-2.png');
 
 
 // Effects
@@ -91,9 +91,6 @@ $shadow-left: -2px 5px 0 3px $primary;
   display: block;
   transition: all 300ms ease-in-out;
   text-decoration: underline wavy $primary 1.46px;
-  &:hover {
-    transform: scale(1.2) translateX(-10px);
-  }
 }
 img {
   max-width: 100%;
