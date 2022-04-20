@@ -115,6 +115,7 @@ body {
 }
 
 .footer {
+  position: relative;
   padding: var(--padding-1);
   margin-top: auto;
   background-color: $primary;
@@ -127,6 +128,17 @@ body {
     padding: 15px;
     font-size: var(--font-size);
     font-weight: 700;
+  }
+  &__made {
+    position: absolute;
+    bottom: 4px;
+    right: 14px;
+    font-size: 14px;
+    color: $primary-light;
+    a {
+      font-weight: 700;
+      color: $black;
+    }
   }
 }
 

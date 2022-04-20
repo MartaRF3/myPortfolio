@@ -226,6 +226,7 @@ body {
 }
 
 .footer {
+  position: relative;
   padding: var(--padding-1);
   margin-top: auto;
   background-color: hsl(var(--primary-hue), 92%, 75%);
@@ -238,6 +239,17 @@ body {
   padding: 15px;
   font-size: var(--font-size);
   font-weight: 700;
+}
+.footer__made {
+  position: absolute;
+  bottom: 4px;
+  right: 14px;
+  font-size: 14px;
+  color: hsl(var(--primary-hue), 45%, 93%);
+}
+.footer__made a {
+  font-weight: 700;
+  color: #222222;
 }
 
 .home {
